@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header">
+            <div class="logo">☀ WeatherNow</div>
+            <div id="dateTime" class="date-time"></div>
+        </header>
+
+        <section class="search-section">
+            <form id="searchForm">
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="searchBtn">Search</button>
+            </form>
+            <button id="locationBtn" class="location-btn">
+                📍 Use My Location
+            </button>
+        </section>
+
+        <p id="message" class="message" role="status"></p>
+
+        <section id="weatherContent" class="weather-content hidden">
+
+            <div class="current-weather card">
+                <div class="location-info">
+                    <h1 id="cityName">--</h1>
+                    <p id="weatherDescription">--</p>
+                </div>
+
+                <div class="weather-main">
+                    <img id="weatherIcon" src="" alt="Weather icon">
+                    <div>
+                        <h2 id="temperature">--°C</h2>
+                        <p id="minMax">H: --° L: --°</p>
+                    </div>
+                </div>
+
+                <p class="feels-like">
+                    Feels like <span id="feelsLike">--</span>
+                </p>
+            </div>
+
+            <h2 class="section-heading">Weather Details</h2>
+
+            <div class="details-grid">
+                <div class="detail-card card">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <h3 id="humidity">--%</h3>
+                </div>
+
+                <div class="detail-card card">
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <h3 id="windSpeed">-- m/s</h3>
+                </div>
+
+                <div class="detail-card card">
+                    <span>🌡️</span>
+                    <p>Pressure</p>
+                    <h3 id="pressure">-- hPa</h3>
+                </div>
+
+                <div class="detail-card card">
+                    <span>☁️</span>
+                    <p>Cloudiness</p>
+                    <h3 id="cloudiness">--%</h3>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h2 class="section-heading">5-Day Forecast</h2>
+                <div id="forecastContainer" class="forecast-grid"></div>
+            </div>
+
+            <div class="history-section">
+                <h2 class="section-heading">Recent Searches</h2>
+                <div id="historyContainer" class="history-list"></div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>WeatherNow | Powered by OpenWeather</p>
+            <button id="unitToggle" class="unit-btn">Switch to °F</button>
+        </footer>
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
